@@ -20,6 +20,10 @@ h1 {
   padding: 1em;
   background-color: burlywood;
 }
+/*
+폰트 크기는 어떤 component에서 쓰이냐에 상관없이 동일한 크기를 유지했으면 하고,
+padding은 폰트 크기에 따라서 변경되길 원한다.
+*/
 
 .contents {
   font-size: 1.125rem;
@@ -31,3 +35,9 @@ h1 {
     flex-direction: column;
   }
 }
+/*
+미디어쿼리 width 값도 rem을 사용하는 것이 좋다.
+왜냐하면 px로 값을 지정했을 때 폰트 크기가 매우 커지면
+브라우저의 창을 많이 줄여야 비로소 contents 요소들이 두 줄이 된다.
+rem을 사용하면 조금 더 반응형으로 만들 수 있다.
+*/

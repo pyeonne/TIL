@@ -1,8 +1,14 @@
-# EM과 REM
+# CSS 단위: Absolute VS Relative
 
 ## 🔗 Resource:
 ### Youtube
 - [프론트엔드 필수 반응형 CSS 단위 총정리 (EM과 REM)](https://www.youtube.com/watch?v=7Z3t1OWOpHo)
+
+### MDN
+- [CSS values and units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units)
+
+### Tool
+- [PXtoEM](http://pxtoem.com/)
 
 
 ## 📝 Summary:
@@ -60,8 +66,8 @@
 
 3. v*
 - viewport related
-- vw는 브라우저의 넓이
-- vh는 브라우저의 높이
+- vw는 부모 요소와 상관없이 브라우저의 넓이에 따라 변한다.
+- vh는 부모 요소와 상관없이 브라우저의 높이에 따라 변한다.
 - vmin는 브라우저의 높이와 넓이 중 작은 값을 사용한다.
 - vmax는 브라우저의 높이와 넓이 중 큰 값을 사용한다.
 
@@ -77,3 +83,12 @@
     font-size: 0.5em; /* 50% */
 }
 ```
+
+### 차이점
+1. 부모 요소의 크기에 따라서 크기가 변경되어 한다면 %, em을 사용하고, 브라우저의 크기에 따라서 크기가 변경되어야 한다면 v*, rem을 사용해야 한다. 
+2. 요소의 너비와 높이에 따라서 크기가 변경되어야 한다면 %, v*를 사용하고, 폰트 크기에 따라 크기가 변경되어야 한다면, em, rem을 사용해야 한다.
+3. 페이지 어디에서든 component의 크기가 일정해야 한다면 rem을 사용하고, component의 크기가 부모 요소에 따라서 유동적으로 변경되어야 한다면 em을 사용해야 한다.
+
+### 결론
+- box 자체의 크기를 결정할 때는 %, v*, flex box를 이용해서 조금 더 유동적으로 만드는 것이 좋다.
+- 요소의 폰트 크기를 결정할 때는 root에 따라 변경되야 한다면 rem을 사용하고, 부모 요소에 따라서 변경되어야 한다면 em을 사용하는 것이 좋다.

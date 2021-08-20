@@ -3,6 +3,12 @@
   border: 1px solid burlywood;
   font-size: 2rem;
 }
+/*
+em과 rem은 방응형 유닛이긴 하지만
+폰트 크기에 따라서 변하기 때문에 결국 이 유닛도 고정적인 값을 가진다.
+그래서 content를 조금 더 유동적으로 만들기 위해서는 %를 이용하는 것이 더 좋다.
+*/
+
 
 .title {
   padding: 0.5em 0.5rem;
@@ -13,9 +19,29 @@
   font-size: 1rem;
   padding: 0.5em 0.5rem;
 }
+/*
+padding을 0.5em으로 적용한다는 것은
+기존 contents에 적용된 폰트 크기에 0.5배가 되어서 계산된다.
+즉, 현재 폰트 크기의 절반이 padding으로 들어가는 것이다.
+그래서 폰트 크기가 변하면 조금 더 반응적으로 padding의 크기가 변하게 된다.
+
+title의 폰트 크기가 contents의 폰트 크기보다 크기 때문에 
+조금 더 많은 padding이 들어가서 수직적으로 정렬이 되지 않는 문제가 발생한다.
+그래서 em을 써서 padding을 주는 것은 좋지만 요소마다 상관없이
+고정적인 padding을 유지해야 한다면 rem을 사용하는 것이 좋다.
+
+이런 경우에는 padding의 상하는 em을 사용하여 폰트 크기에 따라서 크기가 조절되도록 만들고
+padding의 좌우는 rem을 사용해서 폰트 크기에 상관없이 고정되도록 만들면 수직 정렬이 된다.
+
+즉, rem과 em을 하나만 딱 골라서 사용하기 보다는
+어떤 component를 만드는가에 따라서 적절하게 혼용해서 사용하는 것이 중요하다.
+*/
 
 @media screen and (max-width: 780px) {
   .component {
     font-size: 1.5rem;
   }
 }
+
+
+
