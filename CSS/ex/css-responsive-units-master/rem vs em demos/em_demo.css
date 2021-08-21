@@ -2,7 +2,7 @@ h1 {
   display: inline-block;
   font-size: 5em;
   background-color: mediumaquamarine;
-  padding: 1em;
+  padding: 1em; 
 }
 
 @media screen and (max-width: 780px) {
@@ -16,3 +16,9 @@ h1 {
     font-size: 1.5em;
   }
 }
+
+/* 
+rem을 사용하면 폰트 크기에 따라 padding도 변경되도록 할 수 있다.
+미디어쿼리를 사용할 때도 padding이 유동적으로 변해서
+조금 더 반응형으로 component를 만들 수 있다.
+*/

@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.5rem;
+}
+
+.container {
+    display: grid; /* item들이 block요소라면 이 한 줄만으로는 딱히 변화가 없다. */
+
+    /* 
+    똑같이 4:6 비율로 나눠지지만 %보다 fr(fraction)을 훨씬 많이 사용한다. 
+    그 이유는 %를 사용하면 가로 스크롤이 생겨 불필요한 여백이 생기기 때문이다.*/
+    /* grid-template-columns: 40% 60%; */
+    /* grid-template-columns: 4fr 6fr; */
+
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-columns: repeat(3, 1fr); */
+
+    /* 첫번째 column은 고정된 크기로 적용하고 싶다면 px을 사용하면 된다. */
+    /* grid-template-columns: 200px 1fr; */
+
+    /* content 크기와 상관없이 item들의 크기를 균일하게 맞추고 싶다면... */
+    /* grid-auto-rows: 200px; */
+    /* 하지만 content 크기가 200px보다 크다면 삐져나오게 된다. */
+    /* grid-auto-rows: minmax(200px, auto); */
+    /* 최소 200px만큼 크기를 확보하고 200px보다 큰 content가 있다면 자동으로 늘어나게 된다. */
+    grid-auto-rows: minmax(10em, auto);
+    /* px보다는 폰트 크기에 따라 변하는 em을 사용하는 것이 좋다. */
+
+    grid-gap: 1rem; /* 그리드 셀 사이의 간격을 설정한다. */
+
+    /* justify-items: start; 그리드 셀 안의 그리드 item들을 가로축으로 정렬한다. */
+    /* align-items: start; 그리드 셀 안의 그리드 item들을 세로축으로 정렬한다. */
+
+    background: lightgray;
+}
+
+.item {
+    background: rgba(255, 0, 0, 0.5);
+}
+
+.item:nth-child(1) {
+    grid-column: 1/4;
+    /* 
+    grid column 라인의 1부터 4까지 공간을 차지한다. 
+    웹사이트의 header를 만들 떄 사용하면 유용하다.
+    */
+}
+
+.item:nth-child(4) {
+    grid-column: 3;
+    grid-row: 2/4;
+    /*
+    gird-row를 적용하면 item의 위치가 다른 곳으로 이동하는 것을 볼 수 있다. 
+    이때 grid-column을 사용하여 원하는 라인의 숫자값을 적용하면 원하는 위치로 이동시킬 수 있다.
+    */
+}
+
+.item:nth-child(5) {
+    /* justify-self: center; 개별 item 가로 정렬 */
+    /* align-self: center; 개별 item 세로 정렬 */
+}
+
+.item:nth-child(9) {
+    grid-column: 3;
+    grid-row: 3/5;
+    /*
+    grid-column과 grid-row를 사용하여 서로 다른 item끼리 강제로 겹치게 만들 수 있다. 
+    투명한 노랑이랑 투명한 빨강이 겹쳡져서 겹친 부분이 주황색으로 바뀌었다.
+    */
+}
+
+.item:nth-child(odd) {
+    background: rgba(255, 255, 0, 0.5);
+}
