@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="js/test.js" defer></script>
+    </head>
+    <body>
+        <script>
+            // only document
+            // defer와 DOMContentLoaded는 HTML만 완료되면 호출이 된다.
+            window.addEventListener('DOMContentLoaded', () => {
+                console.log('DOMContentLoaded');
+            });
+
+            // after resources (css, images)
+            // 모든 리소스가 다운로드가 되야 이벤트가 발생한다.
+            window.addEventListener('load', () => {
+                console.log('load');
+            });
+
+            // before unload
+            window.addEventListener('beforeunload', () => {
+                console.log('lbeforeunload');
+            });
+
+            // resource is being unloaded
+            window.addEventListener('unload', () => {
+                console.log('unload');
+            });
+        </script>
+    </body>
+</html>

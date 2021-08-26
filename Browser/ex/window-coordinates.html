@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="js/window-coordinates.js" defer></script>
+        <title>Coordinates</title>
+        <style>
+            body {
+                background-color: #000;
+                /* overflow: hidden; 스크롤이 안 되게 하려면 적용 */
+            }
+
+            div {
+                width: 250px;
+                height: 250px;
+                background-color: blanchedalmond;
+                margin: 4px;
+                border-radius: 4px;
+            }
+
+            .special {
+                background-color: lightsalmon;
+            }
+
+            aside {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="special"></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <aside>
+            <button class="scroll-by">Scroll by 100px(y)</button>
+            <button class="scroll-to">Scroll to 100px(y)</button>
+            <button class="scroll-into">Scroll into special</button>
+        </aside>
+    </body>
+</html>
