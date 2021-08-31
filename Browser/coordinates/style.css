@@ -1,5 +1,6 @@
 body {
     background-color: black;
+    margin: 0; /* 기본 마진때문에 이미지가 약간 벗어나 있음 */
 }
 
 .line {
@@ -11,27 +12,21 @@ body {
 .horizontal {
     width: 100%;
     height: 1px;
-    top: 50%;
 }
 
 .vertical {
     width: 1px;
     height: 100%;
-    left: 50%;
 }
 
 .target {
     position: absolute;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%); /* 이미지 중간이 정중앙에 오도록 설정함 */
 }
 
 .tag {
     position: absolute;
-    top: 50%;
-    left: 50%;
     color: #fff;
     font-size: 38px;
-    transform: translate(20px, 20px);
+    margin: 20px; /* target과 tag 떨어뜨리기 */
 }
