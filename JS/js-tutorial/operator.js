@@ -9,6 +9,7 @@ console.log(`string literals:
 console.log("ellie's \n\tbook"); // \n(enter), \t(tab)
 // ellie's
 // 	 book
+// 특수문자열 검색해서 알아보기!
 
 // 2. Numeric operators
 console.log(1 + 1); // add
@@ -54,9 +55,11 @@ const value2 = 4 < 2;
 
 // || (or), finds the first truthy value
 console.log(`or: ${value1 || value2 || check()}`);
+// or 연산자는 어느 하나라도 true가 나오면 뒤에 true인 조건이 있든 상관없이 연산을 멈춘다!
 // 연산을 많이 하는 함수를 호출하거나 expression같은 아이들은 제일 뒤에 두는 것이 효율적이다.
 
 // && (and), finds the first falsy value
+// 모든 조건이 true여야 true
 console.log(`and: ${value1 && value2 && check()}`);
 
 // often used to compress long if-statement
@@ -67,6 +70,7 @@ if (nullableObject != null) {
 }
 */
 
+// check라는 함수는 쓸데없는 시간을 낭비하다가 결국에는 true로 리턴한다.
 function check() {
     for (let i = 0; i < 10; i++) {
         //wasting time
@@ -131,7 +135,7 @@ switch (browser) {
         console.log('go away!');
         break;
     case 'Chrome':
-    case 'Firecox':
+    case 'Firefox':
         console.log('love you!');
         break;
     default:
@@ -153,6 +157,7 @@ while (i > 0) {
 
 // do while loop, body code is executed first,
 // then check the condition.
+// {} 블럭을 먼저 실행하고 싶으면 do while, 조건문이 맞을 떄만 실행하고 싶으면 while
 do {
     console.log(`do while: ${i}`);
     i--;
@@ -192,7 +197,7 @@ for (let i = 0; i < 11; i++) {
     }
 }
 
-// Q2. interate from 0 to 10 and print numbers until reaching 8 {use break}
+// Q2. iterate from 0 to 10 and print numbers until reaching 8 {use break}
 for (let i = 0; i < 11; i++) {
     if (i > 8) {
         break;

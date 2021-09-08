@@ -60,3 +60,6 @@
 -   appendChild는 컨테이너 안에서 제일 끝부분에 요소를 추가해준다.
 -   insertBefore API에 newNode와 referenceNode를 전달하면 newNode를 referenceNode 전에 추가해준다.
 -   부분적으로 변경이 일어나야 된다면 innerHTML을 사용하는 것 보다는 특정 Element의 textContent를 업데이트하는 것이 효율적이다.
+- removeChild를 호출하면 child가 없어질 수도 있다.
+- Element의 변수를 가지고 있으면서 조금 더 많은 동작을 해야된다면 CreateElement를 이용해 만드는 것이 좋다.
+- 한번 업데이트 후 변경할 것이 없다면 innerHTML을 이용해 동적으로 추가해도 괜찮다.
