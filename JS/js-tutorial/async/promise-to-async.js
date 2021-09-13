@@ -35,3 +35,19 @@ userStorage
     .getUserWithRole(id, password) //
     .catch(console.log)
     .then(user => alert(`Hello ${user.name}, you have a ${user.role} role`));
+
+('use strict');
+
+const solution = new_id => {
+    const answer = new_id
+        .toLowerCase()
+        .replace(/[^a-z0-9-_.]/g, '')
+        .replace(/\.{2,}/g, '.')
+        .replace(/^\.|.$/g, '')
+        .padEnd(1, 'a')
+        .slice(0, 15)
+        .replace(/^\.$/g, '')
+        .padEnd(3, answer[answer.length - 1]);
+
+    return answer;
+};
